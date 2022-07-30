@@ -1,0 +1,29 @@
+<b>Id:</b> 
+<%= link_to user.id, user_path(user) %>
+<br>
+<b>Email</b> 
+<%= user.email %>
+<br>
+<b>Confirmation:</b> 
+<%= user.confirmed? %>
+
+<br>
+
+<b><%= 'user.sign_in_count' .humanize %>:</b>
+<%= user.sign_in_count %>
+<br>
+<b><%= 'user.current_sign_in_at' .humanize %>:</b>
+<%= user.current_sign_in_at %>
+<br>
+<b><%= 'user.last_sign_in_at' .humanize %>:</b>
+<%= user.last_sign_in_at %>
+<br>
+<b><%= 'user.current_sign_in_ip' .humanize %>:</b>
+<%= user.current_sign_in_ip %>
+<br>
+<b><%= 'user.user.last_sign_in_ip' .humanize %>:</b>
+<%= user.last_sign_in_ip %>
+
+
+
+
