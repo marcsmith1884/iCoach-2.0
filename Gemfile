@@ -31,4 +31,7 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'devise'
+# gem 'devise'
+gem "devise", github: "heartcombo/devise", branch: "main"
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
