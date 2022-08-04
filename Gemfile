@@ -36,3 +36,5 @@ gem "devise", github: "heartcombo/devise", branch: "main"
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem 'omniauth-github'
+gem 'omniauth-twitter'
+# gem 'omniauth-facebook'

@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :validatable, 
            :confirmable, :trackable, :lockable,
-           :omniauthable, omniauth_providers: [:google_oauth2, :github]
+           :omniauthable, omniauth_providers: [:google_oauth2, :github, :twitter]
            
   
   def self.from_omniauth(access_token)
@@ -17,6 +17,12 @@ class User < ApplicationRecord
             password: Devise.friendly_token[0,20]
          )
      end
+     user.provider = access_token.provider
+     user.uid = access_token.uid
+     user.name = access_token.info.name
+     user.image = access_token.info.image
+     user.save
+     
      user.confirmed_at = Time.now # autoconfirm user from omniauth
     user
   end
