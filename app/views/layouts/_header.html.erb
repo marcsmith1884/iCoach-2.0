@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <i class="fas fa-flag"></i>
@@ -17,6 +17,10 @@
           <div class="fa fa-users"></div>
           Users
         <% end %>
+        <%= link_to trainings_path, class: "nav-link #{'active fw-bold' if current_page?(trainings_path)}" do %>
+          <div class="fa fa-person-running"></div>
+          Training
+        <% end %>
       </ul>
       <ul class="navbar-nav ms-auto">
         <% if current_user %>
@@ -26,10 +30,6 @@
               <b><%= current_user.email %></b>
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to user_path(current_user), class: "dropdown-item #{'active fw-bold' if current_page?(user_path(current_user))}" do %>
-                <div class="fa fa-user"></div>
-                <b>My Profile</b>
-              <% end %>
               <%= link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
                 <div class="fa fa-cog"></div>
                 <b>Account settings</b>

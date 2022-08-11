@@ -11,7 +11,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body style="background-color:powderblue;">
       <%= render "layouts/header" %>
       <%= render "layouts/messages" %>
       <div class="container">
@@ -19,4 +19,11 @@
         <%= yield %>
       </div>
   </body>
+    <footer class="bg-dark text-light">
+      <div class="container">
+          Footer content
+          <%= link_to "Privacy Policy", privacy_policy_path%>
+        <p/>
+      </div>
+  </footer>
 </html>

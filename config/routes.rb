@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :locations
+  resources :trainings
   devise_for :users, controllers: { 
   confirmations: 'users/confirmations', 
   omniauth_callbacks: 'users/omniauth_callbacks' }

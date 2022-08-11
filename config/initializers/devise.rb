@@ -273,14 +273,17 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   #Development
-  if Rails.env.development?
-   config.omniauth :github, 'b524f1013629c2031a35', 'd1b2b9fc8e2f511939114f547bf036f33e292e04', scope: 'user'
-  elsif Rails.env.production?
-  #Production
-    config.omniauth :github, '3895f235c219578eba8b', '757257c68702ef2fe2a4ae72eaee35d46a2d67e6', scope: 'user'
-  end
+#  if Rails.env.development?
+ #  config.omniauth :github, 'b524f1013629c2031a35', 'd1b2b9fc8e2f511939114f547bf036f33e292e04', scope: 'user'
+  #elsif Rails.env.production?
+  ##Production
+   # config.omniauth :github, '3895f235c219578eba8b', '757257c68702ef2fe2a4ae72eaee35d46a2d67e6', scope: 'user'
+#  end
+  
+ # config.omniauth :github, Rails.application.credentials[Rails.env.to_sym][:github][:id][:secret]
+  
   config.omniauth :google_oauth2, '597042520907-ak9iofhlkervhjrnc6f11h8s71l7jf95.apps.googleusercontent.com', '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'
-  config.omniauth :twitter, '4Bk8Nbec43e4K9B2phjF76qfI', 'lnj6yF70XZ6KBDvwOe0mgn7rC4MmPKtttSGK5xYknikyBbTXp5'
+  config.omniauth :twitter, Rails.application.credentials.dig(:twitter, :id), Rails.application.credentials.dig(:twitter, :secret)
   # config.omniauth :facebook, '758119698634736', '0fd584fea069c450f5922046ec7de07a'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
