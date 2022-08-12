@@ -6,6 +6,8 @@ class User < ApplicationRecord
            :confirmable, :trackable, :lockable,
            :omniauthable, omniauth_providers: [:google_oauth2, :github, :twitter]
            
+ include Roleable           
+           
   
   def self.from_omniauth(access_token)
    data = access_token.info
@@ -26,4 +28,9 @@ class User < ApplicationRecord
      user.confirmed_at = Time.now # autoconfirm user from omniauth
     user
   end
+  
+  def to_s
+   email
+  end
+  
 end 

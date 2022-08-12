@@ -1,0 +1,35 @@
+<h2>
+   Editing the roles for <%= @user %> 
+</h2>
+
+<%= form_for(@user) do |f| %>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+       <h2>
+          <%= pluraliza(@user.errors.count, "error") %>
+           Did not allow this user to be saved:
+        </h2>
+        <ul>
+         <% @user.errors.full_messages.each do |message| %>    
+            <li>
+             <%= message %>
+            </li>
+        <% end %>    
+        </ul>
+    </div>
+    <% end %>
+   
+   <% User::ROLES.each do |role| %>
+    <label>
+       <%= f.check_box role %>
+       <%= role.to_s.humanize %>
+    </label>
+    <br>
+  <% end %>
+  
+  <%= f.button :submit %>
+  
+<% end %>  
+
+<%= link_to "Cancel", user_path(@user) %>

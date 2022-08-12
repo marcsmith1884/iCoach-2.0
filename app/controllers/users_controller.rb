@@ -4,6 +4,21 @@ class UsersController < ApplicationController
         @users = User.all.order(created_at: :asc)
     end
     
+    def edit
+        @user = User.find(params[:id])
+    end    
+    
+    def update
+       @user = User.find(params[:id]) 
+       @user.update(user_params)
+       if @user.update(user_params)
+          redirect_to @user, notice: "The user was updated successfully"
+       else
+         render :edit
+       end
+    end
+    
+    
     def show
         @user = User.find(params[:id])
     end
@@ -25,4 +40,12 @@ class UsersController < ApplicationController
         redirect_to users_path, notice: "User was deleted successfully"
     end
     
-end
+
+
+ private
+
+ def user_params
+    params.require(:user).permit(*User::ROLES)
+ end 
+ 
+end 
