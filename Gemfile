@@ -40,3 +40,5 @@ gem 'omniauth-twitter'
 # gem 'omniauth-facebook'
 
 gem 'simple_form'
+
+gem 'invisible_captcha'
