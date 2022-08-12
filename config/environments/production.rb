@@ -1,18 +1,18 @@
 require "active_support/core_ext/integer/time"
 
-  config.action_mailer.default_url_options = {host: "icoachapp.herokuapp.com", protocol: "https"}
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = true
+ # config.action_mailer.default_url_options = {host: "icoachapp.herokuapp.com", protocol: "https"}
+ # config.action_mailer.perform_deliveries = true
+ #config.action_mailer.raise_delivery_errors = true
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    port: 587,
-    address: 'email-smtp.us-east-1.amazonaws.com',
-    user_name: 'AKIA5L4IAXM6ME7CNXHA',
-    password: 'BA4b8hnBD2sua6441dy/El8fMtdK6MU+ymI2WcX7whcX',
-    authentication: :plain,
-    enable_starttls_auto: true
-}
+ # config.action_mailer.delivery_method = :smtp
+  #config.action_mailer.smtp_settings = {
+   # port: 587,
+    #address: 'email-smtp.us-east-1.amazonaws.com',
+    #user_name: 'AKIA5L4IAXM6ME7CNXHA',
+    #password: 'BA4b8hnBD2sua6441dy/El8fMtdK6MU+ymI2WcX7whcX',
+    #authentication: :plain,
+    #enable_starttls_auto: true
+#}
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.

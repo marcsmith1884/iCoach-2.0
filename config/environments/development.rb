@@ -5,7 +5,8 @@ Rails.application.configure do
   
   config.hosts << "2c63ebdf030d40968125d729218eae61.vfs.cloud9.us-east-1.amazonaws.com"
 # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.default_url_options = { host: "https://2c63ebdf030d40968125d729218eae61.vfs.cloud9.us-east-1.amazonaws.com/"}
+  # config.action_mailer.default_url_options = { host: "https://2c63ebdf030d40968125d729218eae61.vfs.cloud9.us-east-1.amazonaws.com/"}
+  # config.action_mailer.default_url_options = { host: "icoachapp.herokuapp.com"}
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
