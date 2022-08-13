@@ -31,10 +31,10 @@ class User < ApplicationRecord
     user
   end
   
-  after_create do
+ # after_create do
    #It will assign a default role
-   self.update(student: true)
-   end
+  # self.update(Users: true)
+  # end
   
   def to_s
    email

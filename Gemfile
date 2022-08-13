@@ -31,6 +31,7 @@ end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+#Source: https://github.com/heartcombo (For the gems) 
 # gem 'devise'
 gem "devise", github: "heartcombo/devise", branch: "main"
 gem 'omniauth-google-oauth2'
